@@ -1,0 +1,113 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "react-hooks",
+    "@typescript-eslint",
+    "simple-import-sort",
+    "sonarjs"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          // `react` first, `next` second, then packages starting with a character
+          [
+            "^react$",
+            "^next",
+            "^[a-z]"
+          ],
+          // Packages starting with `@`
+          [
+            "^@"
+          ],
+          // Packages starting with `~`
+          [
+            "^~"
+          ],
+          // Imports starting with `../`
+          [
+            "^\\.\\.(?!/?$)",
+            "^\\.\\./?$"
+          ],
+          // Imports starting with `./`
+          [
+            "^\\./(?=.*/)(?!/?$)",
+            "^\\.(?!/?$)",
+            "^\\./?$"
+          ],
+          // Style imports
+          [
+            "^.+\\.s?css$"
+          ],
+          // Side effect imports
+          [
+            "^\\u0000"
+          ]
+        ]
+      }
+    ],
+    "global-require": "warn",
+    "max-len": "warn",
+    "no-debugger": "warn",
+    "no-param-reassign": "off",
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error",
+          "info"
+        ]
+      }
+    ],
+    "consistent-return": "warn",
+    "no-underscore-dangle": "error",
+    "no-unused-vars": "warn",
+    "camelcase": "warn",
+    "no-use-before-define": "warn",
+    "no-shadow": "warn",
+    "no-cond-assign": "warn",
+    "import/extensions": "warn",
+    "import/no-absolute-path": "error",
+    "import/no-unresolved": "error",
+    "import/prefer-default-export": "off",
+    "react/prop-types": "off",
+    "react/no-array-index-key": "warn",
+    "react/no-unused-state": "warn",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/destructuring-assignment": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+    "react/function-component-definition": "off",
+    "no-restricted-exports": "off",
+    "quotes": "off",
+    "@typescript-eslint/quotes": "off",
+    "no-nested-ternary": "warn",
+    "@typescript-eslint/ban-types": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "jsx-a11y/no-noninteractive-element-interactions": "warn",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "warn",
+    "jsx-a11y/media-has-caption": "off",
+    "no-tabs": "off",
+    "sonarjs/cognitive-complexity": "error",
+    "no-empty": "error",
+    "no-useless-catch": "error"
+  }
+}
